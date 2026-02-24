@@ -293,14 +293,151 @@ footer {
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
+  .container {
+    width: 95%;
+  }
+
+  /* Layout: stack header items */
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav .brand-img {
+    height: 70px;
+  }
+
+  /* Nav links adapt for different nav markup (ul/li or direct anchors) */
+  nav {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  nav a,
+  nav ul li a {
+    display: inline-block;
+    margin-left: 0;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+
+  /* Hero scales down */
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-content {
+    margin-left: 5%;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* Cards and columns become single column */
   .cards,
   .bar-container,
   .nosotros-container {
     flex-direction: column;
   }
 
+  .bar-container {
+    align-items: stretch;
+  }
+
+  .card {
+    height: 180px;
+  }
+
   .contact-box {
     width: 100%;
+  }
+
+  .servicios {
+    padding: 60px 5%;
+  }
+
+  .nosotros {
+    padding: 60px 5%;
+  }
+
+  .form-map {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav .brand-text {
+    font-size: 28px;
+  }
+
+  .nav .sas {
+    font-size: 0.7rem;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .bar-item {
+    width: 100%;
+  }
+
+  .card {
+    height: 160px;
+  }
+
+  .card-info {
+    grid-template-columns: 1fr;
+  }
+
+  .main-footer {
+    height: auto;
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav .brand-img {
+    height: 55px;
+  }
+
+  nav,
+  nav ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  nav a,
+  nav ul li a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-content {
+    margin-left: 4%;
+  }
+
+  .hero h1 {
+    font-size: 28px;
   }
 }
 
