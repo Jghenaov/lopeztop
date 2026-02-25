@@ -39,14 +39,7 @@ header {
   align-items: center;
 }
 
-/* Logo */
-.brand-img {
-  height: 100px;
-  width: 200px;
-  display: block;
-}
-
-/* Navegación Desktop - BOTONES A LA DERECHA */
+/* Estilos para desktop - los botones están a la derecha */
 nav {
   display: flex;
   align-items: center;
@@ -57,11 +50,7 @@ nav a {
   color: var(--color-blanco);
   text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  padding: 8px 12px;
-  border-radius: 5px;
+  white-space: nowrap; /* Evita que el texto se rompa */
 }
 
 nav a:hover {
@@ -69,17 +58,47 @@ nav a:hover {
   background: var(--color-acento);
 }
 
-/* Botón especial Cotiza Ahora */
+.nav .brand-text {
+  color: blue;
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.nav .top {
+  color: brown;
+}
+
+.nav .sas {
+  color: white;
+  font-size: x-small;
+}
+
+.nav .brand {
+  display: flex;
+  gap: 0px;
+  align-items: center;
+}
+
+.nav .brand-img {
+  height: 100px;
+  width: 200px;
+}
+
+.slogan {
+  font-size: 14px;
+  letter-spacing: 6px;
+  margin-top: 5px;
+  color: #1f4c66;
+}
+
 .btn-nav {
   background: var(--color-acento);
   padding: 8px 15px;
   border-radius: 5px;
-  margin-left: 5px;
-}
-
-.btn-nav:hover {
-  background: var(--color-primario);
-  color: var(--color-blanco) !important;
+  margin-left: 10px; /* Espacio adicional */
 }
 
 /* ===== MENÚ HAMBURGUESA ===== */
@@ -100,6 +119,7 @@ nav a:hover {
   border-radius: 3px;
 }
 
+/* Animación del menú hamburguesa */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 6px);
 }
@@ -112,6 +132,7 @@ nav a:hover {
   transform: rotate(-45deg) translate(8px, -6px);
 }
 
+/* Overlay para cuando el menú está abierto */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -444,7 +465,7 @@ footer {
     display: flex !important;
   }
 
-  /* Resetear nav para móvil */
+  /* Reset los estilos de nav para móvil */
   nav {
     position: fixed;
     top: 0;
@@ -462,13 +483,15 @@ footer {
     z-index: 1000;
     padding: 100px 20px 40px;
     margin: 0;
-    display: flex;
+    display: flex; /* Asegurar que se muestre como flex cuando está activo */
   }
 
+  /* Menú activo */
   nav.active {
     right: 0;
   }
 
+  /* Estilo de enlaces en móvil */
   nav a {
     margin: 0 !important;
     width: 100%;
@@ -478,8 +501,11 @@ footer {
     border-radius: 8px;
     color: var(--color-blanco) !important;
     display: block;
+    position: relative;
+    transition: all 0.3s ease;
   }
 
+  /* Línea separadora entre enlaces */
   nav a:not(:last-child)::after {
     content: '';
     position: absolute;
@@ -490,21 +516,33 @@ footer {
     background: rgba(255, 255, 255, 0.1);
   }
 
+  /* Hover effects */
   nav a:hover {
     background: var(--color-acento) !important;
     color: var(--color-blanco) !important;
     transform: translateX(5px);
   }
 
+  /* Botón especial en móvil */
   .btn-nav {
     background: var(--color-acento) !important;
     margin-top: 30px !important;
     border: 2px solid var(--color-acento);
     font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(193, 18, 31, 0.3);
     width: auto !important;
     min-width: 200px;
   }
 
+  .btn-nav:hover {
+    background: transparent !important;
+    color: var(--color-blanco) !important;
+    border-color: var(--color-acento);
+    transform: translateX(5px) scale(1.05);
+  }
+
+  /* Ajuste del padding del hero */
   .hero-overlay {
     padding-top: 80px;
   }
@@ -582,6 +620,7 @@ footer {
 
   .btn-nav {
     min-width: 180px;
+    padding: 12px 20px !important;
   }
 
   .hero h1 {
@@ -592,8 +631,13 @@ footer {
     font-size: 14px;
   }
 
+  .card {
+    height: 160px;
+  }
+
   .card-info {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
   .main-footer {
@@ -606,6 +650,15 @@ footer {
     gap: 15px;
     text-align: center;
   }
+
+  .form-map {
+    margin: 20px;
+    gap: 20px;
+  }
+
+  .form-map iframe {
+    height: 300px;
+  }
 }
 
 @media (max-width: 400px) {
@@ -615,7 +668,18 @@ footer {
 
   nav {
     width: 100%;
+    max-width: none;
     padding: 80px 15px 25px;
+  }
+
+  nav a {
+    padding: 10px 12px !important;
+    font-size: 0.95rem;
+  }
+
+  .btn-nav {
+    min-width: 160px;
+    padding: 10px 15px !important;
   }
 
   .hero {
